@@ -3,9 +3,8 @@ Kodladığım ilk projem.
 
 Ana Pencere
 
-public final class AnaPencere extends JFrame {
-    
-    
+    public final class AnaPencere extends JFrame {
+  
     private final int mGenislik;
     private int mYukseklik = 600;
    
@@ -58,16 +57,16 @@ public final class AnaPencere extends JFrame {
      
 Yılanı Oluşturan Kutular
 
-public class kutu extends JLabel{
-    public int mGenislik = 20;   
-    public int mYon      = YON.SAG;
-   kutu()
-   {        
+        public class kutu extends JLabel{
+        public int mGenislik = 20;   
+        public int mYon      = YON.SAG;
+        kutu()
+         {        
        setBounds(100, 100, mGenislik, mGenislik);
-   }
-    @Override
-   public void paint(Graphics g)
-   {
+         }
+         @Override
+           public void paint(Graphics g)
+        {
         
         Graphics2D g2 = (Graphics2D)g;
      
@@ -82,45 +81,45 @@ public class kutu extends JLabel{
         g2.setColor(Color.red);
         
         g2.fill(rect);  
-   }
-   public void SolaGit()
-   {
+        }
+            public void SolaGit()
+        {
        int PosX = getX();
        int PosY = getY();
              
        PosX-=mGenislik;
        setBounds(PosX,PosY,mGenislik,mGenislik);
          
-   }
-   public void SagaGit()
-   {
+       }
+          public void SagaGit()
+       {
         int PosX = getX();
-       int PosY = getY();
+        int PosY = getY();
              
        PosX+=mGenislik;
        setBounds(PosX,PosY,mGenislik,mGenislik);
          
-   } 
-      public void YukariGit()
-   {
+       } 
+           public void YukariGit()
+       {
         int PosX = getX();
-       int PosY = getY();
+        int PosY = getY();
              
        PosY-=mGenislik;
        setBounds(PosX,PosY,mGenislik,mGenislik);
          
-   } 
-      public void AsagiGit()
-   {
+       } 
+          public void AsagiGit()
+       {
         int PosX = getX();
-       int PosY = getY();
+        int PosY = getY();
              
        PosY+=mGenislik;
        setBounds(PosX,PosY,mGenislik,mGenislik);
          
-   } 
-      public kutu KutuOlustur()
-      {
+       } 
+           public kutu KutuOlustur()
+       {
           kutu K = new kutu();
           
           int X = getX();
@@ -148,22 +147,22 @@ public class kutu extends JLabel{
           else if(mYon == YON.ASAGI) 
               AsagiGit();
       }
-}
+      }
 
 Yön Interface
 
-public interface YON 
-{
-    public static final int SOL = 1; 
-    public static final int ASAGI = -2;
-    public static final int YUKARI = 2;
-    public static final int SAG = -1;
+         public interface YON 
+        {
+            public static final int SOL = 1; 
+            public static final int ASAGI = -2;
+            public static final int YUKARI = 2;
+            public static final int SAG = -1;
     
-}
+         }
 
 Yılanın Kodları
 
-public class yılan extends JLabel {
+    public class yılan extends JLabel {
 
     public kutu mHead = new kutu();
     
@@ -190,9 +189,9 @@ public class yılan extends JLabel {
         g2.setStroke(new BasicStroke(10));
         
         g2.draw(rect);
-   }
-    yılan()
-    {
+     }
+        yılan()
+     {
         
         mRandom = new Random(System.currentTimeMillis());
         addKeyListener(new klavyekontrol());
